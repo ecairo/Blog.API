@@ -9,10 +9,12 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+// Necesitamos la definición Open API siempre
+app.UseSwagger();
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
+{    
     app.UseSwaggerUI();
 }
 
